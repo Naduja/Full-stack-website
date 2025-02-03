@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}Bristol Hotels{% endblock %}
+
+{% block content %}
+  <div class="header">
+    <h1>Welcome to Bristol Hotels</h1>
+  </div>
+
+  <div class="container">
+    <h2>Available Rooms</h2>
+
+    <div class="room">
+      <img src="{{ url_for('static', filename='images/standard_room.jpg') }}" alt="Standard Room">
+      <div class="room-details">
+        <h3>Standard Room</h3>
+        <p>Features: WiFi, TV, Mini-bar</p>
+        <p>Description: A comfortable room for one guest.</p>
+        <a href="#" class="btn">Book Now</a>
+      </div>
+    </div>
+
+    <div class="room">
+      <img src="{{ url_for('static', filename='images/double_room.jpg') }}" alt="Double Room">
+      <div class="room-details">
+        <h3>Double Room</h3>
+        <p>Features: WiFi, TV, Mini-bar</p>
+        <p>Description: A spacious room for up to two guests.</p>
+        <a href="#" class="btn">Book Now</a>
+      </div>
+    </div>
+
+    <div class="room">
+      <img src="{{ url_for('static', filename='images/family_room.jpg') }}" alt="Family Room">
+      <div class="room-details">
+        <h3>Family Room</h3>
+        <p>Features: WiFi, TV, Mini-bar, Breakfast</p>
+        <p>Description: Ideal for families, accommodating up to four guests.</p>
+        <a href="#" class="btn">Book Now</a>
+      </div>
+    </div>
+
+    <div class="room">
+      <img src="{{ url_for('static', filename='images/executive_suite.jpg') }}" alt="Executive Suite">
+      <div class="room-details">
+        <h3>Executive Suite</h3>
+        <p>Features: WiFi, TV, Mini-bar, Breakfast, Lounge Area</p>
+        <p>Description: Luxury suite with ample space and amenities.</p>
+        <a href="#" class="btn">Book Now</a>
+      </div>
+    </div>
+
+  </div>
+{% endblock %}

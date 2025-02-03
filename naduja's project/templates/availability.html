@@ -1,0 +1,11 @@
+{% extends 'base.html %} {% block content %}
+<div class="container">
+  <h1>Room Availability</h1>
+  <div class="info">
+    <strong>Hotel ID:</strong> {{ hotel_id }}<br />
+    <strong>Room Type:</strong> {{ room_type | capitalize }}<br />
+    <strong>Rooms Available:</strong> {{ rooms_available }}
+  </div>
+  <a href="{{ url_for('home') }}" class="button">Back to Home</a>
+</div>
+{% endblock %}

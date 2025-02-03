@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Booking</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Create a Booking</h1>
+    <form method="post" action="/create-booking">
+        <label for="room_id">Room Type:</label>
+        <select id="room_id" name="room_id" required>
+            {% for room in rooms %}
+            <option value="{{ room.id }}">{{ room.room_type }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="checkinDate">Check-in Date:</label>
+        <input type="date" id="checkinDate" name="checkinDate" required>
+
+        <label for="checkoutDate">Check-out Date:</label>
+        <input type="date" id="checkoutDate" name="checkoutDate" required>
+
+        <button type="submit">Create Booking</button>
+    </form>
+</body>
+</html>

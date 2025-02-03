@@ -1,0 +1,34 @@
+{% extends 'base.html' %}{% block title %}{% endblock %}
+{% block content %}
+<main>
+  <section id="hotel-management">
+      <h2>Hotel Management</h2>
+      <!-- Placeholders for hotel management functionality -->
+      <button onclick="location.href='/admin/add-hotel'">Add New Hotel</button>
+      <button onclick="location.href='/admin/edit-hotel'">Edit Hotels</button>
+  </section>
+
+  <section id="booking-management">
+      <h2>Booking Management</h2>
+      <!-- Placeholders for booking management functionality -->
+      <div id="bookings">
+          <!-- Dynamic list of bookings will be loaded here -->
+      </div>
+  </section>
+
+  <section id="user-management">
+      <h2>User Management</h2>
+      <!-- Placeholders for user management functionality -->
+      <div id="users">
+          <!-- Dynamic list of users will be loaded here -->
+      </div>
+  </section>
+
+  <section id="reports">
+      <h2>Reports</h2>
+      <!-- Placeholders for reports -->
+      <button onclick="location.href='/admin/sales-report'">Monthly Sales Report</button>
+      <button onclick="location.href='/admin/customer-report'">Top Customers</button>
+  </section>
+</main>
+{% end block %}

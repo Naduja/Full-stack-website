@@ -1,0 +1,22 @@
+<!-- hotel_details.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ hotel.city }} Hotel Details</title>
+    <style>
+        /* Add CSS styles for hotel details */
+    </style>
+</head>
+<body>
+    <h1>{{ hotel.city }} Hotel Details</h1>
+    <div class="details">
+        <p><strong>City:</strong> {{ hotel.city }}</p>
+        <p><strong>Capacity:</strong> {{ hotel.capacity }}</p>
+        <p><strong>Peak Season Rate:</strong> £{{ hotel.peak_rate }} per night</p>
+        <p><strong>Off-peak Season Rate:</strong> £{{ hotel.off_peak_rate }} per night</p>
+        <!-- Add more details as needed -->
+    </div>
+</body>
+</html>

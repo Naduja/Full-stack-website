@@ -1,0 +1,27 @@
+{% extends 'base.html' %}{% block title %}{% endblock %} {% block style %}{%
+endblock %} {% block content %}
+<header>
+  <h1>{{ city_name }}</h1>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <!-- Add more navigation links if needed -->
+    </ul>
+  </nav>
+</header>
+
+<!-- Main content section -->
+<main>
+  <h2>Available Rooms in {{ city_name }}</h2>
+  <div class="room-list">
+    {% for room in rooms %}
+    <div class="room">
+      <h3>{{ room.name }}</h3>
+      <p>{{ room.description }}</p>
+      <p>Price: ${{ room.price }} per night</p>
+      <a href="/book/{{ room.id }}">Book Now</a>
+    </div>
+    {% endfor %}
+  </div>
+</main>
+{% endblock %}

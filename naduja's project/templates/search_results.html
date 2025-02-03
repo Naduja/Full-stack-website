@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>City Names</h1>
+
+    <div class="cities-container">
+        {% for city in cities %}
+        <div class="city-card">
+            <h2>{{ city[0] }}</h2>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

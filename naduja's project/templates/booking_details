@@ -1,0 +1,13 @@
+{% extends 'base.html' %}{% block title %}{% endblock%} {% block content %}
+
+<div>
+  <h1>Rooms in {{ room_details.location }}</h1>
+  <p>Price for your stay: ${{ room_details.price }}</p>
+  <p>
+    Check-in: {{ room_details.checkin }}, Check-out: {{ room_details.checkout }}
+  </p>
+  <p>Number of guests: {{ room_details.guests }}</p>
+  <!-- Add more details or an option to confirm the booking -->
+</div>
+
+{% endblock %}

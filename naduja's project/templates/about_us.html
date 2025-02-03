@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% block title %} My Page Title {% endblock %} {%
+    block content %}
+    <head>
+      <title>Flask App</title>
+    
+    </head>
+    
+    <body>
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+      <div class="header">
+        <h1>Welcome to World Hotels</h1>
+      </div>
+    
+      <main>
+        <div class="cards-container">
+          <div class="cards_background">
+            <div class="title_background">
+              <h2 class="cards_h2">Look for your next destination now!</h2>
+            </div>
+          </div>
+        </div>
+        
+              
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </body>
+    {% endblock %}

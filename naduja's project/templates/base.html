@@ -1,0 +1,89 @@
+<!--#Naduja Mohamed  studentid:23027771-->  
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}World Hotel{% endblock %}</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <!-- Add additional CSS files here -->
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <a class="navbar-brand" href="#">
+          <img class="img-logo" src="/static/images/logo.jpg" alt="logo" />
+          
+        </a>
+        <button
+          type="button"
+          id="nav-toggle"
+          class="navbar-toggler collapsed"
+          data-toggle="collapse"
+          data-target="#mainNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <ul class="ul-link">
+          <li class="li-link">
+            <a href="{{ url_for('home') }}">Home</a>
+          </li>
+          <li class="li-link">
+            <a href="{{ url_for('logout') }}">Logout</a>
+          </li>
+          <li class="li-link">
+            <a href="{{ url_for('login') }}">Login</a>
+          </li>
+          <li class="li-link">
+            <a href="{{ url_for('admin_login') }}">Admin</a>
+          </li>
+          <li class="li-link">
+            <a href="{{ url_for('register') }}">Register</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <main>
+      {% block content %}
+      <!-- Page content goes here -->
+      {% endblock %}
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h4>Site Links</h4>
+          <ul>
+              <li><a href="{{ url_for('home') }}">Home</a></li>
+              <li><a href="{{ url_for('about_us') }}">About Us</a></li>
+              <li><a href="{{ url_for('terms_and_conditions') }}">Terms & Conditions</a></li>
+              <li><a href="{{ url_for('contact_us') }}">Contact Us</a></li>
+              <li><a href="{{ url_for('privacy_policy') }}">Privacy policy</a></li>
+          </ul>
+          <div class="footer-section">
+              <h4>Dashboard</h4>
+              <ul>
+                  <li><a href="{{ url_for('user_dashboard') }}">User Dashboard</a></li>
+                  <li><a href="{{ url_for('admin_dashboard') }}">Admin Dashboard</a></li>
+              </ul>
+          </div>   
+        </div>
+      </div>
+      <p>&copy; 2023 My Flask App. All rights reserved.</p>
+      {% block footer_extra %}{% endblock %}
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.8" integrity="sha384-rgjA7mptc2ETQqXoYC3/zJvkU7K/aP44Y+z7xQuJiVnB/422P/Ak+F/AqFR7E4Wr" crossorigin="anonymous"></script>
+    <script src="scripts.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Add additional JavaScript files here -->
+    {% block script %}{% endblock %}
+  </body>
+</html>

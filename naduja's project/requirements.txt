@@ -1,0 +1,14 @@
+Flask
+Flask-SQLAlchemy
+Flask-Login
+Flask-Admin
+Flask-Migrate
+Flask-WTF
+PyMySQL
+python-dotenv
+Flask-Bcrypt
+Flask-Mail
+
+
+
+

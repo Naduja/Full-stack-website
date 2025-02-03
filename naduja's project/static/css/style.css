@@ -1,0 +1,509 @@
+/* General body styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* base.html css*/
+
+.container {
+  width: 100%; /* Set width to 100% */
+  max-width: 1200px; /* Set maximum width */
+  margin: 0 auto; /* Center the container */
+}
+
+nav {
+  display: flex; /* Use flexbox layout */
+  justify-content: space-between; /* Align items with space between them */
+  align-items: center; /* Align items vertically */
+  padding: 1rem 0; /* Add padding */
+}
+
+.navbar-brand {
+  display: flex; /* Use flexbox layout */
+  align-items: center; /* Align items vertically */
+  text-decoration: none; /* Remove underline */
+  color: #333; /* Set text color */
+}
+
+.navbar-brand img {
+  height: 100px; /* Set image height */
+  margin-right: 0.5rem; /* Add margin */
+}
+
+.ul-link {
+  list-style: none; /* Remove bullet points */
+  display: flex; /* Use flexbox layout */
+  align-items: center; /* Align items vertically */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+.li-link {
+  margin-right: 1rem; /* Add margin */
+}
+
+.li-link a {
+  text-decoration: none; /* Remove underline */
+  color: #333; /* Set text color */
+}
+
+/* Styling the navbar toggler */
+#nav-toggle {
+  background-color: transparent; /* Set background color */
+  border: none; /* Remove border */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  padding: 0.5rem; /* Add padding */
+}
+
+/* Styling the collapsed state */
+#nav-toggle[aria-expanded="false"] .navbar-toggler-icon::after {
+  content: '\2630'; /* Unicode character for the hamburger icon */
+}
+
+/* Styling the expanded state */
+#nav-toggle[aria-expanded="true"] .navbar-toggler-icon::after {
+  content: '\2715'; /* Unicode character for the close icon */
+}
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1em; /* Smaller font size for smaller screens */
+  }
+
+  .ul-link {
+    flex-direction: column;
+    align-items: center; /* Stack links vertically on smaller screens */
+  }
+
+  .li-link {
+    text-align: center; /* Center align the links */
+  }
+
+  #nav-toggle {
+    display: block; /* Ensure toggle is visible */
+  }
+}
+
+/* footer*/
+/* static/css/style.css */
+.site-footer {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+
+.site-footer .footer-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+}
+
+.site-footer .footer-section h4 {
+  color: #333;
+}
+
+.site-footer .footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.site-footer .footer-section ul li {
+  padding: 5px 0;
+}
+
+.site-footer .footer-section ul li a {
+  text-decoration: none;
+  color: #666;
+  transition: color 0.3s;
+}
+
+.site-footer .footer-section ul li a:hover {
+  color: #000;
+}
+/*homepage banner*/
+.banner {
+  width: 100%;
+  height: 300px; /* Fixed height for the banner (adjust as needed) */
+  overflow: hidden; /* Hide any overflow */
+  position: relative;
+  /* Optional: Center the banner */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the area without distortion */
+  display: block; /* Remove extra space below the image */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .site-footer .footer-container {
+      flex-direction: column;
+      align-items: center;
+  }
+}
+/*user dashboard*/
+/* Dashboard General Styles */
+.dashboard-container {
+  max-width: 960px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.dashboard-header h1 {
+  color: #333;
+  font-size: 24px;
+}
+
+/* Dashboard Booking Card Styles */
+.dashboard-booking-card {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.dashboard-booking-details h3 {
+  font-size: 18px;
+  color: #0056b3;
+}
+
+.dashboard-booking-details p {
+  font-size: 16px;
+  color: #666;
+  margin: 5px 0;
+}
+
+.dashboard-booking-actions button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+}
+
+.dashboard-btn.dashboard-view-btn {
+  background-color: #28a745; /* Green */
+}
+
+.dashboard-btn.dashboard-update-btn {
+  background-color: #ffc107; /* Yellow */
+}
+
+.dashboard-btn.dashboard-cancel-btn {
+  background-color: #dc3545; /* Red */
+}
+
+/* Dashboard Responsive */
+@media (max-width: 768px) {
+  .dashboard-booking-actions button {
+      width: 100%;
+      margin-top: 10px;
+  }
+
+  .dashboard-booking-actions {
+      display: flex;
+      flex-direction: column;
+  }
+}
+
+/*admin dashboard styling*/
+.admin-dashboard {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 800px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.admin-dashboard h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.admin-dashboard ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.admin-dashboard ul li {
+  margin: 10px 0;
+}
+
+.admin-dashboard ul li a {
+  display: block;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.admin-dashboard ul li a:hover {
+  background-color: #0056b3;
+}
+/*end of admin dashboard styling*/
+
+/* home.html/////////////*/
+/* Booking form styling */
+/* General form styling */
+/* Form field container adjustments for horizontal layout */
+/* Styling for the booking form container */
+/* Styling for the booking form container */
+.header {
+  text-align: center; /* Center the text */
+  margin-bottom: 20px; /* Add margin at the bottom */
+  text-size-adjust: 30px;
+  
+}
+.header h1{
+  text-align:center;
+  font-size: 40px;
+  font-weight: 700;
+  color: #000b03;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.header h2{
+  text-align: center;
+  font-size: 30px;
+  font-weight: 500;
+  color: #0f0102;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+form {
+  width: 100%; /* Takes full width */
+  max-width: 800px; /* Maximum width of the form to maintain layout integrity */
+  background: white;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Adds a subtle shadow for depth */
+  margin: 20px auto; /* Centers the form with margin from top and bottom */
+  border-radius: 8px; /* Adds slightly rounded corners */
+  display: flex; /* Enables flexbox layout */
+  flex-wrap: wrap; /* Allows items to wrap in smaller screens */
+  justify-content: space-between; /* Distributes space evenly between items */
+  align-items: center; /* Aligns items vertically */
+}
+
+/* Style for each form group */
+form .form-group {
+  flex: 1 1 180px; /* Allows flexing with basis of 180px */
+  margin: 5px; /* Small margin for spacing */
+}
+
+/* Style for labels and inputs */
+label {
+  display: block; /* Ensures label is on top of the input for small sizes */
+  margin-bottom: 5px; /* Space between label and input */
+}
+
+input[type="text"], input[type="date"], input[type="number"] {
+  width: 100%; /* Inputs take full width of their container */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Styling for the submit button */
+button {
+  padding: 10px 20px;
+  background-color: #0056b3; /* Button color */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer; /* Changes cursor to pointer when hovering over the button */
+  width: auto; /* Auto width based on content */
+  margin-top: 10px; /* Additional space from the last input */
+}
+
+button:hover {
+  background-color: #004494; /* Darker shade on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  form {
+    flex-direction: column; /* Stack elements vertically in small screens */
+  }
+
+  form .form-group {
+    width: 100%; /* Full width for mobile layout */
+    flex-basis: auto; /* Overrides the flex setting */
+  }
+}
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centers the cards within the container */
+  align-items: flex-start; /* Aligns items at the start of the container */
+  padding: 10px; /* Optional: adds padding inside the container for better spacing */
+}
+
+.cards-b {
+  width: calc(25% - 20px); /* Each card takes up 25% of the container width minus margins */
+  margin: 10px; /* Adds spacing around each card */
+  background-color: #fff; /* White background for each card */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15); /* Adds depth with a shadow */
+  transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.cards-b:hover {
+  transform: translateY(-5px); /* Lifts the card slightly on hover */
+}
+
+.img-cards {
+  width: 100%; /* Ensures image covers the full width of the card */
+  height: 200px; /* Sets a fixed height for uniformity */
+  object-fit: cover; /* Ensures images cover the area properly */
+  border-radius: 4px; /* Optional: adds rounded corners to the images */
+}
+
+.cards-b2 {
+  padding: 15px;
+  text-align: center; /* Centers text inside the card details */
+  grid: center;
+}
+
+.p-cards {
+  color: #555; /* Lighter grey color for the text */
+  margin: 5px 0; /* Small margin for paragraph spacing */
+}
+
+/* Login Container */
+.login_container {
+  max-width: 400px; /* Suitable width for most screens */
+  margin: 20px auto; /* Centering the container */
+  padding: 30px; /* Sufficient padding inside the container */
+  border: 1px solid #ccc; /* Consistent border around the container */
+  border-radius: 10px; /* Smoothed corners */
+  background-color: #f9f9f9; /* Neutral background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Central alignment of child elements */
+  background-color: rgb(247, 206, 212);
+}
+/* Ensuring all child elements within login container correctly fit */
+.login_container > * {
+  width: 100%; /* This ensures that every child fits within the container */
+  box-sizing: border-box; /* Includes padding and borders in width calculation */
+}
+
+.admin_login_container{
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.admin_login_container > * {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.login_container h1{
+  text-align: center;
+}
+/* Submit Button */
+.admin_login_container button {
+  width: 80%;
+  padding: 12px;
+  margin-top: 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Error Message */
+.admin_error_message {
+  color: #ff0000;
+  margin-top: 10px;
+}
+
+h2 {
+  margin-top: 0; /* Remove default top margin */
+  margin-bottom: 20px; /* More space below the header */
+  color: #333; /* Dark grey color for better text visibility */
+  text-align: center; /* Center-align the title */
+}
+
+/* city.html /////////////*/
+main {
+  padding: 20px;
+  flex:1;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.room-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Add some space between room listings */
+}
+
+.room {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+  flex: 1 0 300px; /* Make room listings responsive */
+}
+
+.room h3 {
+  margin-bottom: 10px;
+}
+
+.room p {
+  margin-bottom: 10px;
+}
+
+.room a {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+}
+
+.room a:hover {
+  background-color: #555;
+}
+footer{
+  bottom: 0;
+  width: 100%;
+  background-color: #eee;
+  color: #333;
+  text-align: center;
+  padding: 10px 0; /* Add padding for better spacing */
+}
+

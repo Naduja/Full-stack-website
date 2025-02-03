@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% block title %}User Dashboard{% endblock %} {% block
+style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+{% endblock %} {% block content %}
+<div class="dashboard-container">
+  <header class="dashboard-header">
+    <h1>Welcome to Your Dashboard</h1>
+  </header>
+
+  <div class="dashboard-buttons">
+    <!-- View Booking Button -->
+    <a href="{{ url_for('view_booking') }}" class="dashboard-btn"
+      >View Booking</a
+    >
+
+    <!-- Update Booking Button -->
+    <a href="{{ url_for('update_booking') }}" class="dashboard-btn"
+      >Update Booking</a
+    >
+
+    <!-- Cancel Booking Button -->
+    <a href="{{ url_for('cancel_booking') }}" class="dashboard-btn"
+      >Cancel Booking</a
+    >
+  </div>
+</div>
+{% endblock %} {% block script %}
+<!-- Optional JavaScript here if needed -->
+{% endblock %}

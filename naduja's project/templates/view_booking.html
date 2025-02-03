@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}View Bookings{% endblock %}
+{% block content %}
+<div class="dashboard-container">
+  <header class="dashboard-header">
+    <h1>View Booking</h1>
+  </header>
+
+  <div class="booking-list">
+    <ul>
+      {% for booking in bookings %}
+      <li>
+        <h3>Booking ID: {{ booking.id }}</h3>
+        <p>Check-in Date: {{ booking.check_in_date }}</p>
+        <p>Check-out Date: {{ booking.check_out_date }}</p>
+        <p>Room Type: {{ booking.room_type }}</p>
+        <!-- Add links/buttons for Update and Cancel actions -->
+        <a href="{{ url_for('update_booking', booking_id=booking.id) }}">Update</a>
+        <form action="{{ url_for('cancel_booking', booking_id=booking.id) }}" method="post">
+          <button type="submit">Cancel</button>
+        </form>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endblock %}

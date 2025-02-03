@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Booking Receipt{% endblock %}
+
+{% block content %}
+<div class="header">
+  <h1>Booking Receipt</h1>
+</div>
+
+<div class="container">
+  <div class="room-details">
+    <h2>{{ room.room_type }}</h2>
+    <img src="{{ url_for('static', filename='images/' + room.image) }}" alt="{{ room.room_type }}">
+    <p><strong>Features:</strong> {{ room.features }}</p>
+    <p><strong>Description:</strong> {{ room.description }}</p>
+    <p>Thank you for your booking!</p>
+    <p>Payment Successful</p>
+    <a href="{{ url_for('home') }}" class="btn">Click here to go back to home page</a>
+  </div>
+</div>
+{% endblock %}

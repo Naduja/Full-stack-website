@@ -1,0 +1,7 @@
+{% for booking in bookings %}
+<form
+  action="{{ url_for('cancel_booking', booking_id=booking.booking_id) }}"
+  method="post"
+>
+</form>
+{% endfor %}

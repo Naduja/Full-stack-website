@@ -1,0 +1,162 @@
+<!--#Naduja Mohamed  studentid:23027771-->  
+{% extends 'base.html' %} {% block title %} My Page Title {% endblock %} {%
+  block content %}
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    
+    <header>
+      <div class="banner">
+          <img src="{{ url_for('static', filename='images/banner.jpg') }}" alt="Banner Image">
+      </div>
+  </header>
+    <div class="header">
+      
+      <h1>Welcome to World Hotels</h1>
+    </div>
+  
+    <main>
+      <div class="cards-container">
+        <div class="cards_background"> 
+          <div class="title_background">
+            <h2 class="cards_h2">Look for your next destination now!</h2>
+          </div>
+        </div>
+      </div>
+      <h1>Book a Room</h1>
+      <form action="{{ url_for('booking_form') }}" method="POST">
+        <label for="city_name">City Name:</label>
+        <input type="text" id="city_name" name="city_name" required>
+
+        <label for="check_in_date">Check-in Date:</label>
+        <input type="date" id="check_in_date" name="check_in_date" required>
+
+        <label for="check_out_date">Check-out Date:</label>
+        <input type="date" id="check_out_date" name="check_out_date" required>
+
+        <label for="room_type">Room Type:</label>
+        <select id="room_type" name="room_type" required>
+            <option value="peak">Peak</option>
+            <option value="off_peak">Off-Peak</option>
+        </select>
+
+        <button type="submit">Find Hotels</button>
+    </form>
+      <div id="result">
+        <!-- This is where the response will be loaded -->
+      </div>
+      <h1 class="cards_h1">Check out our top destinations this summer</h1>
+      <div class="cards-container">
+        {% for hotel in hotels %}
+        <a href="{{ url_for('book_hotel', hotel_id=hotel.id) }}" class="cards-b">
+          <img
+            class="img-cards"
+            src="{{ url_for('static', filename='images/' + hotel.image) }}"
+            alt="{{ hotel.name }}"
+          />
+          <div class="cards-b2">
+            <p class="p-cards">{{ hotel.name }}</p>
+            <p class="p-cards">Price a night: ${{ hotel.price_per_night }}</p>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+      <div class="cards-container">
+        
+        <div class="cards-b">
+          <img
+            class="img-cards"
+            src="/static/images/bristol_hotel.jpg"
+            alt="Bristol"/>
+          <div class="cards-b2">
+            <p class="p-cards">Bristol</p>
+            <p class="p-cards">Price a night:£150</p>
+            <a href="{{ url_for('bristol') }}" class="button">Enter</a>
+          </div>
+          </div>
+        <div class="cards-b">
+          <img
+            class="img-cards"
+            src="/static/images/london.jpg"
+            alt="London"/>
+          <div class="cards-b2">
+            <p class="p-cards">London</p>
+            <p class="p-cards">Price a night:£210</p>
+            <a href="{{ url_for('london') }}" class="button">Enter</a>
+          </div>
+          </div>
+        <div class="cards-b">
+          <img
+            class="img-cards"
+            src="/static/images/belfast.jpg"
+            alt="Belfast"/>
+          <div class="cards-b2">
+            <p class="p-cards">belfast</p>
+            <p class="p-cards">Price a night:£140</p>
+            <a href="{{ url_for('belfast') }}" class="button">Enter</a>
+          </div>
+          </div>
+  
+          <div class="cards-b">
+            <img
+              class="img-cards"
+              src="/static/images/swansea.jpg"
+              alt="Swansea"/>
+            <div class="cards-b2">
+              <p class="p-cards">swansea</p>
+              <p class="p-cards">Price a night:£140</p>
+              <a href="{{ url_for('swansea') }}" class="button">Enter</a>
+            </div>
+          </div>
+          <div class="cards-b">
+            <img
+              class="img-cards"
+              src="/static/images/plymouth.jpg"
+              alt="Birmingham"/>
+            <div class="cards-b2">
+              <p class="p-cards">plymouth</p>
+              <p class="p-cards">Price a night:£190</p>
+              <a href="{{ url_for('plymouth') }}" class="button">Enter</a>
+            </div>
+          </div>
+  
+            <div class="cards-b">
+              <img
+                class="img-cards"
+                src="/static/images/newcastle.jpg"
+                alt="New Castle"
+              />
+              <div class="cards-b2">
+                <p class="p-cards">New Castle</p>
+                <p class="p-cards">Price a night:£130</p>
+                <a href="{{ url_for('newcastle') }}" class="button">Enter</a>
+              </div>
+            </div>
+            <div class="cards-b">
+              <img
+                class="img-cards"
+                src="/static/images/cardiff.jpg"
+                alt="Birmingham"
+              />
+              <div class="cards-b2">
+                <p class="p-cards">Cardiff</p>
+                <p class="p-cards">Price a night:£140</p>
+                <a href="{{ url_for('cardiff') }}" class="button">Enter</a>
+              </div>
+            </div>
+            <div class="cards-b">
+              <img class="img-cards" src="/static/images/birmingham_hotel.jpg" alt="Birmingham" />
+              <div class="cards-b2">
+                  <p class="p-cards">Birmingham</p>
+                  <p class="p-cards">Price a night:£160</p>
+                  <a href="{{ url_for('birmingham') }}" class="button">Enter</a>
+              </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+  {% endblock %}
